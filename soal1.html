@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SOAL 1 UJIAN</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Drawing Tools</h1>
+        <h5>1. Persegi</h5>
+        <h5>2. Segitiga Siku2 Rata Kiri</h5>
+        <h5>3. Segitiga Siku2 Rata Kanan</h5><br>
+        <h5>Jenis Bangunan</h5>
+        <input type="number" placeholder="Input Jenis Bangunan" id="jenisBangunan">
+        <h5>Ukuran :</h5>
+        <input type="number" placeholder="Input Ukuran" id="ukuranBangunan"><br><br>
+        <button onclick="lihatFunction()">Lihat!</button>
+        <h2 id="lihatJawaban">
+
+        </h2>
+        
+    </body>
+    <script>
+        var ukuranBangunan = document.getElementById("ukuranBangunan").value
+        var jenisBangunan = document.getElementById("jenisBangunan").value
+        var bintang = '';
+        if(jenisBangunan==1){
+            for(var i = 0; i<ukuranBangunan;i++){
+                for(var j = 0; j<ukuranBangunan;j++){
+                    bintang += '*'
+                }
+                bintang+='\n'
+            }
+        }
+        else if(jenisBangunan==2){
+            for(var i = 0; i<ukuranBangunan;i++){
+                for(var j = 0 ; j<i;j++){
+                    bintang += '*'
+                }
+                bintang+='\n'
+            }
+        }
+        else{
+            for(var i = 0;i<ukuranBangunan;i++){
+                for(var j = 0; j<ukuranBangunan-i;j++){
+                    bintang+=' '
+                }
+                for(var k = 0; k<i;k++){
+                    bintang+='*'
+                }
+            }
+        }
+        lihatFunction=()=>{
+            document.getElementById('lihatJawaban').innerHTML=bintang
+        }
+     
+    </script>
+</html>
+
